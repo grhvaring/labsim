@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../results/lab_01"
+		},
+		{
+			"path": "../include"
+		},
+		{
+			"path": "../src"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cmath": "cpp",
+			"complex": "cpp",
+			"iostream": "cpp",
+			"ostream": "cpp",
+			"system_error": "cpp",
+			"string": "cpp",
+			"array": "cpp",
+			"string_view": "cpp",
+			"vector": "cpp",
+			"iosfwd": "cpp",
+			"map": "cpp"
+		}
+	}
+}
