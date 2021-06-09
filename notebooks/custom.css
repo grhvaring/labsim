@@ -1,0 +1,57 @@
+<style>
+.text_cell_render { 
+    font-family: Palatino; 
+    line-height: 1.5; 
+    font-size: 12pt; 
+    }
+
+h1 {
+    text-align: center;
+}
+
+h2:before, h3:before, h4:before, h5:before {
+    font-family: Helvetica Neue;
+    font-weight: bold;
+    color: #DDD;
+}
+
+h2:before {
+    content: "# ";
+}
+
+h3:before {
+    content: "## ";
+}
+
+h4:before {
+    content: "### ";
+}
+
+h5:before {
+    content: "#### ";
+}
+
+.assignement {
+    border: 2px; 
+    border-style: solid; 
+    border-color: #F5F5F5; 
+    padding: 1em; 
+    background-color: #F5F5F5;
+}
+
+.assignement::before {
+    counter-increment: exercise;
+    content: "Assignement: ";
+    color: darkred;
+    font-weight: bold;
+}
+
+.remark {
+    color:indigo
+}
+
+.remark::before {
+    content: "Remark: ";
+    font-weight: bold;
+}
+</style>

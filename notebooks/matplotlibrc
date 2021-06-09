@@ -1,0 +1,52 @@
+#### MATPLOTLIBRC FORMAT FILE FOR THE APPEARANCE OF THE GRAPHS IN THE NSL LABORATORY
+
+## LINES
+lines.linewidth: 2    # line width in points
+
+## FONT
+font.family:  serif
+font.size:    13
+font.serif:   Palatino
+
+## LaTeX
+text.usetex: True
+
+## AXES
+axes.titlesize:      14     # font size of the axes title
+axes.titleweight:    bold   # font weight of title
+axes.titley: 1
+axes.labelsize:      12     # font size of the x and y labels
+axes.spines.top:     False
+axes.spines.right:   False
+axes.prop_cycle: cycler('color', ['darkblue', 'darkred', 'darkgreen', 'darkorange', '9467bd', '8c564b', 'e377c2', '7f7f7f', 'bcbd22', '17becf'])
+axes.xmargin:        0      # x margin.  See `axes.Axes.margins`
+axes.ymargin:        0.01    # y margin.  See `axes.Axes.margins`
+axes.autolimit_mode: data   # If "data", use axes.xmargin and axes.ymargin as is.
+                            # If "round_numbers", after application of margins, axis
+                            # limits are further expanded to the nearest "round" number
+
+## LEGEND
+legend.frameon:        False    # if True, draw the legend on a background patch
+legend.fontsize:       12
+legend.title_fontsize: 12       # None sets to the same as the default axes.
+
+## FIGURE
+figure.titlesize:   14      # size of the figure title (``Figure.suptitle()``)
+figure.titleweight: bold    # weight of the figure title
+figure.figsize:     5, 3    # figure size in inches
+figure.autolayout:  True    # When True, automatically adjust subplot
+                            # parameters to make the plot fit the figure
+                            # using `tight_layout`
+
+## HISTOGRAM PLOTS
+hist.bins: 20  # The default number of histogram bins or 'auto'.
+
+## SAVING FIGURES
+savefig.format:      svg      # {png, ps, pdf, svg}
+savefig.bbox:        standard    # {tight, standard}
+                              # 'tight' is incompatible with pipe-based animation
+                              # backends (e.g. 'ffmpeg') but will work with those
+#savefig.directory:  ~        # default directory in savefig dialog box,
+                              # leave empty to always use current working directory
+savefig.transparent: True     # setting that controls whether figures are saved with a
+                              # transparent background by default
