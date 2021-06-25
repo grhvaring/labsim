@@ -24,14 +24,14 @@ int main(int argc, char** argv) {
   if (argc > 1) NBINS = atoi(argv[1]);
 
   int seed[] = {0, 0, 0, 1};
-  Random random(seed);
+  Random random{seed};
 
   string result_path = "../results/lab_01/";
   ofstream out;
   string filename = "chi2";
   open(out, result_path, filename);
 
-  double r = 0;  // random number container
+  int r = 0;     // random index container
   double* bins;  // histogram
   double chi2 = 0, chi2_approx = 0, chi2_bin;
   double expected_counts;  // exact average value
@@ -45,21 +45,20 @@ int main(int argc, char** argv) {
       for (int bin = 0; bin < nbins; bin++) bins[bin] = 0;
       // fill histogram
       for (int t = 0; t < nthrows; t++) {
-        r = nbins * random.Rannyu();  // random number uniform in [0,nbins)
-        bins[int(r)]++;
+        r = nbins * random.Rannyu();  // random integer uniform in [0,nbins)
+        bins[r]++;  // r is of type int, so it is automatically rounded
       }
       // calculate chi2
-      for (int bin = 0; bin < nbins - 1; bin++) {
+      for (int bin = 0; bin < nbins; bin++) {
         chi2_bin = pow(bins[bin] - expected_counts, 2) / expected_counts;
         chi2_approx += chi2_bin;              // variance approximated to np
         chi2 += chi2_bin / (1 - 1. / nbins);  // correct variance
-        // bins[bin] = 0;  // reset histogram for the next iteration
       }
       out << chi2_approx << " " << chi2 << " ";
       chi2_approx = 0;  // reset chi2_approx for the next iteration
       chi2 = 0;         // reset chi2 for the next iteration
       delete[] bins;
-      progress.write(double(i) / iterations);
+      progress.write(double(i + 1) / iterations);
     }
     out << endl;
   }

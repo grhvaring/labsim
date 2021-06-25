@@ -37,21 +37,21 @@ def estimation_plot(ax, filename, expected_y=None, label="simulation", fmt="-", 
 def just_plot(ax, filename):
     data = np.loadtxt(filename)
     ax.plot(data[:,-1])
-    
+
 def double_plot(files, suptitle, titles, xlabel, ylabels):
     fig, ax = plt.subplots(1, 2, figsize=(10,3.8))
     fig.suptitle(f"\\textbf{{{suptitle}}}")
     for axis, title, ylabel, file in zip(ax, titles, ylabels, files):
         set_labels(axis, title, xlabel, ylabel)
         just_plot(axis, file)
-    
+
 def double_estimation(files, suptitle, titles, xlabel, ylabels, expected_ys=[None, None]):
     fig, ax = plt.subplots(1, 2, figsize=(10,3.8))
     fig.suptitle(suptitle)
     for axis, title, ylabel, file, exp_y in zip(ax, titles, ylabels, files, expected_ys):
         set_labels(axis, title, xlabel, ylabel)
         estimation_plot(axis, file, exp_y)
-    
+
 def set_labels(ax, title='', xlabel='', ylabel=''):
     'set labels and title of the graph'
     ax.set_title(f'\\textbf{{{title}}}')
