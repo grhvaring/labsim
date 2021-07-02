@@ -1,7 +1,7 @@
 /****************************************************************
  Exercise 4.3: After having the system equilibrate (4.1) calculate
  quantities of interest such as the temperature, and the potential,
- kinetic, and internal energy per particle.
+ kinetic, and internal energy per particle. (+ pressure optionally)
  Calculate all the quantities using block averages.
 *****************************************************************/
 
@@ -20,7 +20,8 @@ int main(int argc, char* argv[]) {
 
   // output setup
   string result_path = "../results/lab_04/";  // result folder
-  vector<string> files{"potential", "kinetic", "total", "temperature"};
+  vector<string> files{"potential", "kinetic", "total", "temperature",
+                       "pressure"};
   files = add_prefix(files, "avg_");
   map<string, ofstream> out;
 
