@@ -47,8 +47,6 @@ For each exercise I put together a `C++` project to complete the "heavy lifting"
 - source (`.cpp`) files for functions/classes implementations, located in `src/`
 - `Makefile`, located in each `lab_x` directory (different labs can have different `Makefile`s).
 
-ADD A WORD ON THE FILES SEED.IN AND PRIMES
-
 **Remark:** **The** implementations of **functions/classes** used in the exercises **are not in the same directory as** the source code of **the exercises**, this way they're _globally_ accessible to all projects. What **needs** to be present in each lab directory is the `Makefile`, which contains all the _specific_ dependencies for the projects in that lab.
 
 The executables and object files are not present in the repository, due to possible incompatibilities with the user's machine, but they can be obtained with the procedure explained right below.
