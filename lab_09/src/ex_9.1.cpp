@@ -10,7 +10,7 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
-  int nroutes = 1;
+  int nroutes = 1000;
   int ncities = 32;
 
   if (argc > 1) nroutes = atoi(argv[1]);
@@ -27,7 +27,7 @@ int main(int argc, char* argv[]) {
 
   // tsp solver
   GeneticTSP tsp{nroutes, ncities, seed};
-  int generations = 100;
+  int generations = 1000;
   if (argc > 2) generations = atoi(argv[2]);
 
   for (string shape : {"circle", "square"}) {
