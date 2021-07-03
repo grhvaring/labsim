@@ -8,6 +8,27 @@ Each lab session consisted of solving a number of exercises, and then report the
 
 What follows is an overview on how the repository is organized and how the different parts depend on one another.
 
+## Content
+
+The `C++` source code is separated from the notebooks, because I wrote some custom settings for the visualization, which are easier to access/modify if all the notebooks are located in the same directory.
+
+Every lab has its own `C++` directory and `jupyter notebook`, called respectively `lab_x` and `lab_x.ipynb`.
+
+Here's a list of the contents of each lab:
+
+1. Random distribution sampling + Buffon's experiment simulation
+2. Monte Carlo integration + 3D Random Walks
+3. Black-Sholes' theory vs. Monte Carlo simulation
+4. Molecular Dynamics simulation of Lennard-Jones interacting Argon sample
+5. Metropolis algorithm applied to the Hydrogen atom electron position probability distributions
+6. 1D Ising model
+7. Monte Carlo simulation of the Canonical (NVT) Ensemble
+8. Quantum Variational Monte Carlo for ground energy estimation + Path Integral Monte Carlo/Ground State
+9. Travelling Salesman Problem (TSP) solved using a Genetic Algorithm
+10. TSP solved with simulated annealing + parallel search with [MPI](https://www.mpi-forum.org) library
+11. Neural Network (NN) Regression with Keras (`python3` only)
+12. Handwritten digit recognition with Direct NN + Convolutional NN (`python3` only)
+
 ## Visualization
 
 The jupyter notebooks are located in the folder `notebooks/` and contain the presentation of each problem, followed by the strategy I employed to solve it and a visual representation of the results I obtained.
