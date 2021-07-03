@@ -57,3 +57,54 @@ def set_labels(ax, title='', xlabel='', ylabel=''):
     ax.set_title(f'\\textbf{{{title}}}')
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
+
+
+def settings_3d(ax, limit=5):
+    ax.view_init(5, 45)
+    ax.set_frame_on(False)
+    ax.grid(False)
+
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.set_zlabel('z')
+        
+    ax.set_xlim(-limit, limit)
+    ax.set_ylim(-limit, limit)
+    ax.set_zlim(-limit, limit)
+    
+    ax.xaxis.pane.fill = False
+    ax.yaxis.pane.fill = False
+    ax.zaxis.pane.fill = False
+
+
+# +
+from matplotlib.gridspec import GridSpec
+
+def surface_plus_normal_plot():
+    x = np.arange(-1,1,0.01)
+    y = np.arange(-1,1,0.01)
+    X, Y = np.meshgrid(x,y)
+    Z = np.sin(X**2 + Y**2)
+
+    print(x.shape)
+    print(y.shape)
+    print(Z.shape)
+
+    fig = plt.figure(figsize=(10,5))
+    gs = GridSpec(5, 5)
+    ax = fig.add_subplot(gs[:,0:-2], projection='3d')
+
+    # Plot a 3D surface + scatterplot
+    np.random.shuffle(x)
+    np.random.shuffle(y)
+    ax.scatter(x, y, np.sin(x**2 + y**2), color='darkgreen', alpha=.9, label='surface')
+    ax.plot_surface(X, Y, Z, alpha=0.1, color='black', label='data')
+    ax.view_init(30,-150)
+
+    legend_elements = [Line2D([0], [0], lw=10, alpha=0.1, color='k', label='surface'), 
+                       Line2D([0], [0], lw=0, marker='o', color='darkgreen', label='data')]
+    ax.legend(handles=legend_elements)
+
+    # draw a normal plot on the side, with the correct aspect ratio
+    ax1 = fig.add_subplot(gs[1:-1,-2:])
+    ax1.plot(np.sin(np.linspace(0, np.pi, 100)))
