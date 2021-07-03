@@ -1,0 +1,13 @@
+108
+0.05
+1.2098
+5
+50
+100
+
+  in >> npart;
+  in >> density;
+  in >> temperature;
+  in >> rcut;
+  in >> delta;
+  in >> bins
